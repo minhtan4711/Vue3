@@ -1,10 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <div>
+    <h1>Reaction Timer</h1>
+    <button @click="start" :disabled="isPlaying">Play</button>
+    <div v-if="isPlaying">
+      <block :delay="delay" />
+    </div>
+  </div>
 </template>
 
 <script>
+import Block from "./components/Block.vue";
+
 export default {
   name: "App",
+  components: {
+    Block,
+  },
+  data() {
+    return {
+      isPlaying: false,
+      delay: null,
+    };
+  },
+  methods: {
+    start() {
+      this.delay = Math.random() * 5000 + 2000;
+      this.isPlaying = true;
+    },
+  },
 };
 </script>
 
