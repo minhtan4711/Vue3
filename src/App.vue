@@ -3,7 +3,12 @@
   <input type="text" ref="input_name" />
   <button @click="handleClick">Click me</button>
   <div v-if="showModal">
-    <modal :header="header" :text="text" @close="toggleModal" />
+    <modal @close="toggleModal">
+      <template v-slot:links>
+        <a href="#">Sign up</a>
+        <a href="#">More info</a>
+      </template>
+    </modal>
   </div>
   <button @click.shift="toggleModal">Open Modal (shift)</button>
 </template>
