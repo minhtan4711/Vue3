@@ -1,5 +1,5 @@
 <template>
-  <h1>My first vue app</h1>
+  <h1>My first vue app 2</h1>
 </template>
 
 <script>
